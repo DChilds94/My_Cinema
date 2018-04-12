@@ -1,11 +1,11 @@
-require_relative("../sql_runner")
-require_relative("customers.rb")
-require_relative("tickets.tb")
+# # require_relative("../sql_runner.rb")
+# require_relative("./customers.rb")
+# require_relative("./tickets.tb")
 
-class films
+class Film
 
   attr_reader :id
-  attr_accessor :title :price
+  attr_accessor :title, :price
 
   def initialize(options)
     @id = options["id"].to_i

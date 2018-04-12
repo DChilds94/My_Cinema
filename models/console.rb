@@ -1,7 +1,7 @@
 require_relative("customers.rb")
 require_relative("films.rb")
 require_relative("tickets.rb")
-require("pry.byebug")
+require("pry-byebug")
 
 
 

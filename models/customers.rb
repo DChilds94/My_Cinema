@@ -1,5 +1,5 @@
-require_relative('films.rb')
-require_relative('tickets.rb')
+# require_relative('./films.rb')
+# require_relative('./tickets.rb')
 require_relative('../sql_runner.rb')
 
 class Customer
@@ -10,13 +10,13 @@ class Customer
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @funds = options['funds'].to_
+    @funds = options['funds'].to_i
   end
 
   def save()
     sql = "INSERT INTO customers (name, funds) VALUE ($1, $2) RETURNING id"
-    values [@name, @funds]
+    values = [@name, @funds]
     customer = SqlRunner.run(sql, values).first
     @id = customer['id'].to_i
-  end 
+  end
 end
