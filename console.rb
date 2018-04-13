@@ -5,6 +5,7 @@ require('pry-byebug')
 
 Customer.delete_all()
 Film.delete_all()
+Ticket.delete_all()
 
 customer1 = Customer.new({"name" => "Daniel Childs", "funds" => 100})
 customer2 = Customer.new({"name" => "Wiktoria Potocka", "funds" => 50})
