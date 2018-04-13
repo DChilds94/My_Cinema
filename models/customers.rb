@@ -58,6 +58,21 @@ class Customer
       return Film.map_films(film)
     end
 
+    def check_funds(film)
+      if funds >= film.price
+        return true
+      else
+        return false
+      end
+    end
+
+    def buy_ticket(film)
+      if check_funds(film) == true
+        @funds -= film.price
+      Ticket.new({"customer_id" => @id, "film_id" => film.id}).save
+    end
+  end
+
 
 
 
