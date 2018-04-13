@@ -8,7 +8,7 @@ class Ticket
   attr_accessor :customer_id, :film_id
 
   def initialize(options)
-    @id = options["id"].to_i if
+    @id = options["id"].to_i
     @customer_id = options["customer_id"].to_i
     @film_id = options["film_id"].to_i
   end
@@ -58,9 +58,9 @@ class Ticket
   def film()
     sql = "SELECT * FROM films WHERE id = $1;"
     values = [@film_id]
-    film = SqlRunner.run(sql, values).first()
-    return Film.new(film)
-  end 
+    film = SqlRunner.run(sql, values)
+    return Film.map_films(film)
+  end
 
 
 end
