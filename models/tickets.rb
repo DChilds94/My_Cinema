@@ -1,6 +1,6 @@
-# # require_relative('../db/sql_runner.rb')
-# require_relative('./films')
-# require_relative('./customers')
+require_relative('../db/sql_runner.rb')
+require_relative('./films')
+require_relative('./customers')
 
 class Ticket
 
@@ -61,6 +61,22 @@ class Ticket
     film = SqlRunner.run(sql, values)
     return Film.map_films(film)
   end
+
+  # def self.ticket_count
+  #   sql = "SELECT * FROM tickets WHERE customer_id = $1;"
+  #   values = [@customer_id]
+  #   ticket_count = SqlRunner.run(sql, values)
+  #   return ticket_count.map  {|ticket_count| Ticket_count.new(ticket_count)}
+  # end
+
+# |ticket| Ticket.new(ticket)}
+
+def self.customer_tickets()
+  sql = "SELECT * FROM customers WHERE id = $1"
+  values = [@id]
+  customer = SqlRunner.run(sql, values).first()
+  return Customer.new(customer)
+end
 
 
 end

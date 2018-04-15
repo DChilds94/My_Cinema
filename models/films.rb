@@ -56,4 +56,8 @@ class Film
     return Customer.map_customers(customer_hash)
   end
 
+  def customer_total()
+    return customer.count
+  end 
+
 end

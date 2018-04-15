@@ -61,7 +61,7 @@ class Customer
     def check_funds(film)
       if funds >= film.price
         return true
-      else
+      elsec
         return false
       end
     end
@@ -73,6 +73,9 @@ class Customer
     end
   end
 
+  def ticket_total
+    return film.count
+  end
 
 
 
